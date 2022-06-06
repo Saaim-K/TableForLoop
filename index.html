@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function result() {
+            let table = +document.getElementById('tableNum').value;
+            let endTable = +document.getElementById('tableEndNum').value;
+            let result = "";
+            for (var a = 1; a <= endTable; a++) {
+                result = (`${result}    <p>    ${table}   x   ${a}   =${table * a}</p>`);
+            }
+            document.getElementById("result").innerHTML ="Table of "+table+"<hr>"+ result;
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>Table Generator</h1>
+
+        <br>
+        <table>
+            <tr>
+                <td>
+                    Enter table you want to Print.
+                </td>
+                <td>
+                    <input type="number" name="" id="tableNum">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter till where you want to print the table <table></table>
+                </td>
+                <td>
+                    <input type="number" name="" id="tableEndNum">
+                </td>
+            </tr>
+        </table>
+        <br>
+        <button onclick="result();">Generate Table</button>
+        <div id="result"></div>
+        <br><hr>
+
+    </center>
+</body>
+
+</html>
